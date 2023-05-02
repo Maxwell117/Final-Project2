@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Reservation
+
+<h2>Update Reservation </h2>
+
+@using (Html.BeginForm("InsertReservation", "Reservation", "Put"))
+{
+    <input asp-for="ID" type="hidden" value="@Model.ID" />
+
+    <label asp-for="FirstName" class="control-label">First Name</label>
+    <input type="text" name="FirstName" class="form-control" value="@Model.FirstName" />
+
+    <label asp-for="LastName" class="control-label">Last Name</label>
+    <input type="text" name="LastName" class="form-control" value="@Model.LastName" />
+
+    <label asp-for="Price" class="control-label">Price</label>    
+    <input type="number" step="0.01" name="Price" class="form-control" value="@Model.Price" />
+
+    <label asp-for="SeatNumber" class="control-label">Seat Number</label>    
+    <input type="number" step="0.01" name="SeatNumber" class="form-control" value="@Model.SeatNumber" />
+
+    <input type="submit" value="Insert Reservation" class="btn btn-primary" />
+}

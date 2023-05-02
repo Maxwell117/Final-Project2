@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Reservation>
+
+<h3>All Reservation Data</h3>
+
+<table class="table">
+	 <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Price</th>
+        <th>Seat Number</th>
+    </tr>
+	
+
+	@foreach(var item in Model)
+	{
+	 <tr>
+		<td><a href="/Reservation/ViewReservation/@item.ID">View @item.ID<a/></td>
+		<td>@item.FirstName</td>
+		<td>@item.LastName</td>
+		<td>@item.Price</td>
+		<td>@item.SeatNumber</td>
+		<td><a href="/Reservation/UpdateReservation/@item.ID">Update <a/></td>
+	    <td><a href="/Reservation/DeleteReservation/@item.ID">Delete <a/></td>
+     </tr>
+	}
+</table>
